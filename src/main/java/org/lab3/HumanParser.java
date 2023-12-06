@@ -1,9 +1,16 @@
 package org.lab3;
 
+
+import org.lab3.entities.Division;
+import org.lab3.entities.Human;
+import org.lab3.entities.Sex;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class HumanParser {
 
@@ -19,8 +26,14 @@ public class HumanParser {
         }
     }
 
-    static public Human parse(String [] str) {
-
+    static public Human parse(String [] str) throws IOException {
+        if (str.length != 6)
+            throw new IOException("parse exception");
+        String [] regex = {"\\d+", "[A-Z][a-z]+", "(Male|Female)", "\\d{2}\\.\\d{2}\\.\\d{4}", "[A-Z]", "\\d+"};
+        for (int i = 0; i < str.length; i++) {
+            if(!str[i].matches(regex[i]))
+                throw new IOException("parse exception");
+        }
         return new Human(
                 Integer.parseInt(str[0]),
                 str[1],

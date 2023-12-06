@@ -1,4 +1,4 @@
-package org.lab3;
+package org.lab3.entities;
 
 import lombok.Value;
 

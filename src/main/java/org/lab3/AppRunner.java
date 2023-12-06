@@ -5,6 +5,8 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
+import org.lab3.entities.Human;
+
 import java.util.List;
 import java.io.*;
 import java.util.ArrayList;
